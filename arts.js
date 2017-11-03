@@ -5,7 +5,7 @@ var artsAnimations = []
 
 var artsControlls = new Controlls('artsPlayPause', 'artsSlider', 'artsLoop', artsDuration)
 artsControlls.addAnimations(artsAnimations)
-//artsControlls.playPause.click()
+artsControlls.playPause.click()
 
 var outerLines = arts.group()
 var middLines = arts.group()
@@ -28,7 +28,7 @@ all.line(150, 130, 130, 150)
 all.line(150, 170, 170, 150)
 all.line(150, 170, 130, 150)
 
-artsAnimations.push(all.animate(3000).rotate(360, 140, 140).pause())
+artsAnimations.push(all.animate(artsDuration).rotate(90).pause())
 
 // arrows up
 artsAnimations.push(innerLines.line(150, 120, 170, 140).animate(artsDuration, '<').dmove(0, 10).pause())
@@ -74,6 +74,6 @@ artsAnimations.push(outerLines.line(150, 230, 130, 210).animate(artsDuration, '<
 artsAnimations.push(outerLines.line(170, 200, 170, 210).animate(artsDuration, '<').dmove(0, -30).pause())
 artsAnimations.push(outerLines.line(130, 200, 130, 210).animate(artsDuration, '<').dmove(0, -30).pause())
 
-artsAnimations.push(outerLines.animate(artsDuration*2, '>').rotate(90, 150, 150).pause())
-artsAnimations.push(middLines.animate(artsDuration*2, '>').rotate(180, 150, 150).pause())
-artsAnimations.push(innerLines.animate(artsDuration*2, '>').rotate(-90, 150, 150).pause())
+artsAnimations.push(outerLines.animate(artsDuration, '>').rotate(90, 150, 150).pause())
+artsAnimations.push(middLines.animate(artsDuration, '>').rotate(180, 150, 150).pause())
+artsAnimations.push(innerLines.animate(artsDuration, '>').rotate(-90, 150, 150).pause())
