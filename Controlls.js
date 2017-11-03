@@ -20,7 +20,7 @@ class Controlls {
   }
   
   onSlide(event){
-    let val = event.target.value / (Number(event.target.max) + 1)
+    let val = Number(this.slider.value) / (this.duration + 1)
       this.animate(val)
   }
   
