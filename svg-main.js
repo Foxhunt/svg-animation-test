@@ -1,8 +1,8 @@
 var draw = SVG('drawing').size(300, 300)
 
-var svgMainDuration = 2000;
+var svgMainDuration = 1000 * 4;
 
-var controlls = new Controlls('playPause', 'slider', svgMainDuration)
+var controlls = new Controlls('playPause', 'slider', 'loop', svgMainDuration)
 controlls.playPause.click()
 
 var innerCircles = draw.group()
@@ -83,6 +83,7 @@ lineAnims.push(
 
 lines.stroke({
   width: 2,
+	linecap: 'round',
   color: '#000'
 })
 
