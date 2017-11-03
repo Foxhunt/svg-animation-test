@@ -7,9 +7,15 @@ class Controlls {
     this.interval = null
     this.duration = duration
     this.animations = []
+    
+    this.startTime = 0;
+    this.lastTime = 0;
 
+    this.init()
+  }
+  
+  init(){
     this.slider.oninput = (e) => this.onSlide(e)
-
     this.playPause.onclick = () => this.onClick()
   }
   
@@ -23,9 +29,9 @@ class Controlls {
         clearInterval(this.interval)
         this.interval = null
       } else {
-        if (this.slider.value == this.sliderMax)
-          this.slider.value = 0
-        this.interval = setInterval(() => this.play(), 1)
+        this.startTime = Date.now()
+        this.lastTime = this.startTime
+        this.interval = setInterval(() => this.play(), 16)
       }
   }
 
@@ -34,12 +40,17 @@ class Controlls {
   }
 
   play() {
-    let val = Number(this.slider.value)
-    if (val < this.duration) {
-      this.slider.stepUp()
-      this.animate(val / (this.duration+1))
+    let now = Date.now()
+    let pos = now - this.startTime
+    let delta = now - this.lastTime
+    this.lastTime = now
+    
+    if (pos < this.duration) {
+      this.slider.stepUp(delta)
+      this.animate(pos / (this.duration+1))
     } else {
       this.slider.value = 0
+      this.startTime = Date.now()
     }
   }
   

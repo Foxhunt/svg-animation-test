@@ -1,6 +1,6 @@
 const arts = SVG('arts').size(300, 300)
 
-var artsDuration = 1000
+var artsDuration = 500
 var artsAnimations = []
 
 var artsControlls = new Controlls('artsPlayPause', 'artsSlider', artsDuration)
