@@ -1,8 +1,9 @@
 var draw = SVG('drawing').size(300, 300)
 
-var svgMainDuration = 1000;
+var svgMainDuration = 2000;
 
 var controlls = new Controlls('playPause', 'slider', svgMainDuration)
+controlls.playPause.click()
 
 var innerCircles = draw.group()
 var outerCircles = draw.group()
@@ -88,5 +89,3 @@ lines.stroke({
 rotations.push(lines.animate(svgMainDuration, '<>').rotate(-(45 * 9)).pause())
 rotations.push(outerCircles.animate(svgMainDuration, '<>').rotate(-(45 * 3)).pause())
 rotations.push(innerCircles.animate(svgMainDuration, '<>').rotate(45 * 7).pause())
-
-controlls.playPause.click()
