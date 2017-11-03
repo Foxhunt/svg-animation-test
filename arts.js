@@ -1,6 +1,6 @@
 const arts = SVG('arts').size(300, 300)
 
-var artsDuration = 2500
+var artsDuration = 3500
 var artsAnimations = []
 
 var artsControlls = new Controlls('artsPlayPause', 'artsSlider', artsDuration)
@@ -11,9 +11,9 @@ var outerLines = arts.group()
 var middLines = arts.group()
 var innerLines = arts.group()
 
-artsAnimations.push(arts.circle().radius(2).center(150, 150).animate(artsDuration, '>').center(150, 140).rotate(180, 150, 150).pause())
+artsAnimations.push(arts.circle().radius(1).center(150, 150).animate(artsDuration, '>').center(150, 140).radius(2).rotate(180, 150, 150).pause())
 arts.circle().radius(2).center(150, 150)
-artsAnimations.push(arts.circle().radius(2).center(150, 150).animate(artsDuration, '>').center(150, 160).rotate(180, 150, 150).pause())
+artsAnimations.push(arts.circle().radius(1).center(150, 150).animate(artsDuration, '>').center(150, 160).radius(2).rotate(180, 150, 150).pause())
 
 arts.stroke({
   color: '#000',
@@ -72,4 +72,4 @@ artsAnimations.push(outerLines.line(130, 200, 130, 210).animate(artsDuration, '>
 
 artsAnimations.push(outerLines.animate(artsDuration, '>').rotate(-180, 150, 150).pause())
 artsAnimations.push(middLines.animate(artsDuration, '>').rotate(90, 150, 150).pause())
-artsAnimations.push(innerLines.animate(artsDuration, '>').rotate(-90, 150, 150).pause())
+artsAnimations.push(innerLines.animate(artsDuration, '>').rotate(180, 150, 150).pause())
