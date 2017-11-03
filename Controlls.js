@@ -45,9 +45,9 @@ class Controlls {
     let delta = now - this.lastTime
     this.lastTime = now
     
-    if (pos < this.duration) {
+    if (Number(this.slider.value) < this.duration) {
       this.slider.stepUp(delta)
-      this.animate(pos / (this.duration+1))
+      this.animate(Number(this.slider.value) / (this.duration+1))
     } else {
       this.slider.value = 0
       this.startTime = Date.now()

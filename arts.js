@@ -70,6 +70,6 @@ artsAnimations.push(outerLines.line(150, 230, 130, 210).animate(artsDuration, '>
 artsAnimations.push(outerLines.line(170, 200, 170, 210).animate(artsDuration, '>').dmove(0, -30).pause())
 artsAnimations.push(outerLines.line(130, 200, 130, 210).animate(artsDuration, '>').dmove(0, -30).pause())
 
-artsAnimations.push(outerLines.animate(artsDuration, '>').rotate(-180, 150, 150).pause())
-artsAnimations.push(middLines.animate(artsDuration, '>').rotate(90, 150, 150).pause())
-artsAnimations.push(innerLines.animate(artsDuration, '>').rotate(180, 150, 150).pause())
+artsAnimations.push(outerLines.animate(artsDuration, '>').rotate(90, 150, 150).pause())
+artsAnimations.push(middLines.animate(artsDuration, '>').rotate(180, 150, 150).pause())
+artsAnimations.push(innerLines.animate(artsDuration, '>').rotate(270, 150, 150).pause())
