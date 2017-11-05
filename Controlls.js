@@ -26,7 +26,7 @@ class Controlls {
 	}
 
 	onClick() {
-		if(this.slider.value == this.duration){
+		if (this.slider.value == this.duration) {
 			this.slider.value = 0
 			this.startTime = Date.now()
 			this.lastTime = this.startTime
@@ -58,6 +58,9 @@ class Controlls {
 		} else if (this.loopBox.checked) {
 			this.slider.value = 0
 			this.startTime = Date.now()
+		} else {
+			clearInterval(this.interval)
+			this.interval = null
 		}
 	}
 
