@@ -1,9 +1,8 @@
 class Controlls {
 
-	constructor(buttonID, rangeID, loopBoox, duration) {
-		this.playPause = document.getElementById(buttonID)
-		this.slider = document.getElementById(rangeID)
-		this.loopBox = document.getElementById(loopBoox)
+	constructor(svgDivID, duration) {
+		this.svgDiv = document.getElementById(svgDivID)
+		this.createControlls(svgDivID)
 		this.slider.max = duration
 		this.interval = null
 		this.duration = duration
@@ -68,4 +67,32 @@ class Controlls {
 		this.animations.push(an)
 	}
 
+	createControlls(svgDivID) {
+		let playPause = document.createElement('input')
+		playPause.id = svgDivID + 'PlayPause'
+		playPause.type = 'button'
+		playPause.value = 'play'
+
+		let slider = document.createElement('input')
+		slider.id = svgDivID + 'Slider'
+		slider.type = 'range'
+		slider.value = '0'
+		
+		let loopBox = document.createElement('input')
+		loopBox.id = svgDivID + 'Loop'
+		loopBox.type = 'checkbox'
+		
+		let loopText = document.createTextNode("loop")
+		
+		
+		this.svgDiv.parentNode.insertBefore(playPause, this.svgDiv.nextSibling)
+			.parentNode.insertBefore(slider, playPause.nextSibling)
+			.parentNode.insertBefore(loopBox, slider.nextSibling)
+			.parentNode.insertBefore(loopText, loopBox.nextSibling)
+			
+		
+		this.playPause = playPause
+		this.slider = slider
+		this.loopBox = loopBox
+	}
 }

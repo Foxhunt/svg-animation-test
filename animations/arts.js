@@ -3,7 +3,7 @@ const arts = SVG('arts').size(300, 300)
 var artsDuration = 2000
 var artsAnimations = []
 
-var artsControlls = new Controlls('artsPlayPause', 'artsSlider', 'artsLoop', artsDuration)
+var artsControlls = new Controlls('arts', artsDuration)
 artsControlls.addAnimations(artsAnimations)
 artsControlls.playPause.click()
 
