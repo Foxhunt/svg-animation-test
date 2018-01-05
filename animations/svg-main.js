@@ -3,7 +3,6 @@ var draw = SVG('drawing').size(300, 300)
 var svgMainDuration = 1000 * 4;
 
 var controlls = new Controlls('drawing', svgMainDuration)
-controlls.playPause.click()
 
 var innerCircles = draw.group()
 var outerCircles = draw.group()

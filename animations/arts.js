@@ -5,7 +5,6 @@ var artsAnimations = []
 
 var artsControlls = new Controlls('arts', artsDuration)
 artsControlls.addAnimations(artsAnimations)
-artsControlls.playPause.click()
 
 var outerLines = arts.group()
 var middLines = arts.group()
@@ -27,8 +26,6 @@ all.line(150, 130, 170, 150)
 all.line(150, 130, 130, 150)
 all.line(150, 170, 170, 150)
 all.line(150, 170, 130, 150)
-
-//artsAnimations.push(all.animate(artsDuration).rotate(90).pause())
 
 // arrows up
 artsAnimations.push(outerLines.line(150, 50, 170, 70).animate(artsDuration, '<').dmove(0, 60).pause())
